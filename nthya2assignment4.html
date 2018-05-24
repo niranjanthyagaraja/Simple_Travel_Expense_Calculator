@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="nthya2assignment4.css">
+    <title>Assignment 4</title>
+   <script type="text/javascript" src="nthya2assignment4.js"></script>
+</head>
+<body onload="preload()">
+    <form Name="Myform" id="theForm">
+        <fieldset><legend>Expense Form</legend>
+			<p>All fields are mandatory.</p>
+			<div class="">Default Value<input type="checkbox" name="terms" id="def1" onclick="present()"></div>
+			<div class="two"><label for="Name">Name</label><input type="text" name="Name" id="Name" maxlength="30" onkeydown="return isalpha(event);" required></div>
+			<div class="two"><label for="Phone">Phone Number</label><input type="tel" name="areacode" id="areacode" size="3" maxlength="3" onKeyup="autotab(this, document.Myform.suffix)" onkeydown="return isNumber(event)" required> <input type="tel" name="suffix" id="suffix" size="3" maxlength="3" onKeyup="autotab(this, document.Myform.extn)" onkeydown="return isNumber(event)" required> <input type="tel" name="extn" id="extn" size="4" maxlength="4" onkeydown="return isNumber(event)" required></div>
+			<div class="two"><label for="Zip">Zip Code</label><input type="tel" name="zip" id="zip" size="5" maxlength="5" onkeydown="return isNumber(event)" onKeyup="autotab(this, document.Myform.code)" required><input type="tel" name="code" id="code" size="4" maxlength="4" onkeydown="return isNumber(event)" ></div>
+			<div class="two"><label for="Description">Description (You have<p id="value"></P>characters left)</label><textarea name="Description" id="Description" onkeydown="description();" maxlength="250" rows=7 wrap="physical" cols=20 required></textarea> </div>
+			<div class="two"><label for="Airline">Airline Expense</label><input type="text" name="Airline" id="Airline" onkeydown="return isNumber(event);" onkeyup="total();"></div>
+			<div class="two"><label for="Hotel">Hotel Expense</label><input type="text" name="Hotel" id="Hotel" onkeydown="return isNumber(event);" onkeyup="total();"></div>
+			<div class="two"><label for="Meal">Meal Expense</label><input type="text" name="Meal" id="Meal" onkeydown="return isNumber(event);"onkeyup="total();"></div>
+			<div class="two"><label for="Total">Total</label><input type="text" name="Total" id="Total" readonly></div>
+			<div align="left"><input type="reset" value="Submit" id="submit" onclick="reseter()"></div>
+        </fieldset>
+    </form>
+</body>
+</html>
